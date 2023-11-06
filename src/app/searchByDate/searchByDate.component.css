@@ -1,0 +1,18 @@
+
+/*::ng-deep .datePicker {*/
+/*  background:lightblue;*/
+/*}*/
+
+/*::ng-deep .datePicker .mat-calendar-body-today:not(.mat-calendar-body-selected){*/
+/*  border-color:darkblue;*/
+/*}*/
+::ng-deep .datePicker .mat-toolbar{
+  font-size: 20px;
+  font-family: Lato;
+  color: #1E1F1F;
+  font-weight: bold;
+}
+
+.mat-datepicker-input {
+  background-color: #FDFDFE;
+}

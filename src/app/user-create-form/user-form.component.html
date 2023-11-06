@@ -1,0 +1,114 @@
+<div
+  style="background-image: url('../../assets/images/phone_car.jpg'); background-size: cover; width: 100%; height: 120%; position: absolute">
+
+  <ul style="width: content-box; margin-right: auto ">
+
+    <li style="display: inline-block">
+      <div
+        style="position: relative; color: #F4F4F5; font-size: 64px; font-family: Federo; font-weight: 400; word-wrap: break-word;white-space: nowrap;">
+        Car Service
+      </div>
+    </li>
+
+    <li style="display: inline-block">
+      <img style="width: 49px; height: 49px; margin: 47% 0 0 1960%;position: relative;"
+           src="../../assets/images/earth.webp"/>
+    </li>
+
+    <li style="display: inline-block; position: absolute; margin-top: 2%">
+      <div
+        style="position: relative; color: #F4F4F5; font-size: 30px; font-family: Lato; font-weight: bold; margin: 0 0 0 2300%">
+        EN
+      </div>
+    </li>
+  </ul>
+
+
+
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm" style="width: fit-content;margin: 10% auto">
+
+    <div style="color: #FF0404; margin:0 auto 5%; width: fit-content; font-size: 20px; text-shadow: 1px 0 1px white,0 1px 1px white,-1px 0 1px white,0 -1px 1px white; " *ngIf="errorMessage"
+         class="alert alert-danger">{{ errorMessage }}</div>
+
+    <div style="width:fit-content; margin: 0 auto">
+      <input type="text" [(ngModel)]="user.login"
+             minlength="2"
+             maxlength="45"
+             class="input"
+             id="login"
+             name="login"
+             placeholder="Login"
+             required #login="ngModel"
+             style="margin: 0 auto 0.7%">
+      <div style="width: fit-content ;color: #FF0404; margin:0 0 5% 28px;" [hidden]="!login.pristine"
+           class="alert alert-danger">Login is required
+      </div>
+    </div>
+
+    <ul class="ul" style="margin:1.5% auto; width: fit-content">
+      <li class="li">
+        <input type="text" [(ngModel)]="user.name"
+               minlength="2"
+               maxlength="45"
+               class="input"
+               id="name"
+               name="name"
+               placeholder="Name"
+               required #name="ngModel">
+        <div style="width: fit-content ;color: #FF0404; margin-left: 28px; margin-top: 2px" [hidden]="!name.pristine"
+             class="alert alert-danger">Name is required
+        </div>
+
+      </li>
+
+      <li class="li">
+        <input type="text" [(ngModel)]="user.lastname"
+               minlength="2"
+               maxlength="45"
+               class="input"
+               id="lastname"
+               name="lastname"
+               placeholder="Lastname"
+               required #lastname="ngModel">
+        <div style="width: fit-content ;color: #FF0404; margin-left: 28px; margin-top: 2px" [hidden]="!lastname.pristine"
+             class="alert alert-danger">Lastname is required
+        </div>
+      </li>
+
+    </ul>
+
+    <ul class="ul" >
+      <li class="li">
+        <input type="password" [(ngModel)]="user.password"
+               minlength="8"
+               maxlength="45"
+               class="input"
+               id="pass"
+               name="pass"
+               placeholder="Password"
+               (change)="checkPassword()">
+        <div style="color: #FF0404; margin-left: 28px; margin-top: 2px"
+             class="alert alert-danger">{{passwordMessage}}
+        </div>
+      </li>
+
+      <li class="li">
+        <input type="password" [(ngModel)]="user.confirmPassword"
+               class="input"
+               id="confirm_password"
+               name="confirm_password"
+               placeholder="Confirm password"
+               [ngModelOptions]="{standalone: true}">
+        <div style="color: #FF0404; margin-left: 28px; margin-top: 2px" *ngIf="confirmPasswordMessage"
+             class="alert alert-danger">{{confirmPasswordMessage}}
+        </div>
+      </li>
+    </ul>
+
+    <button type="submit" [disabled]="!userForm.form.valid"
+            class="buttonSignUp"> Sign up
+    </button>
+
+  </form>
+
+</div>

@@ -1,0 +1,97 @@
+<img style="width: 100%; height: 140%; position: absolute; " src="../../assets/images/phone_car.jpg"/>
+<ul>
+  <p style="width: 100%; height: content-box; position: relative">
+  <li style="display: inline-block">
+  <div
+    style="position: relative; color: #F4F4F5; font-size: 64px; font-family: Federo; font-weight: 400; white-space: nowrap; margin: 0.7% 2%;">
+    Car Service
+  </div>
+</li>
+
+
+
+  <li *ngIf=isSignIn style="display: inline-block;vertical-align: top;margin-top: 1.4%">
+    <img style="width: 92.88px; height: 83.15px; position: relative; margin-left: 420%;"
+         src="../../assets/images/car.png"/>
+  </li>
+
+  <li *ngIf=isSignIn style="display: inline-block; margin-top: 3%;">
+    <div
+      style="position: relative; color: #F4F4F5; font-size: 26px; font-family: Lato; font-weight: 700;  white-space: nowrap; margin-left: 200%">
+      <a [routerLink]="['manage/orders2']">Manage bookings</a>
+    </div>
+  </li>
+
+  <li *ngIf="!isSignIn;else authEarth" style="display: inline-block;vertical-align: top;margin-top: 2.5% ">
+    <img style="width: 45px; height: 45px; position: relative; margin-left: 1450%"
+         src="../../assets/images/earth.webp"/>
+  </li>
+  <ng-template #authEarth>
+    <li style="display: inline-block;vertical-align: top;margin-top: 2.5% ">
+      <img style="width: 45px; height: 45px; position: relative; margin-left: 1040%"
+           src="../../assets/images/earth.webp"/>
+    </li>
+  </ng-template>
+
+
+  <li *ngIf="!isSignIn;else authEN" style="display: inline-block;vertical-align: top; margin-top: 3%;">
+    <div
+      style=" position: relative; color: #F4F4F5; font-size: 26px; font-family: Lato; font-weight: 700; white-space: nowrap; margin-left: 970%">
+      EN | $
+    </div>
+  </li>
+  <ng-template #authEN>
+    <li style="display: inline-block;vertical-align: top; margin-top: 3%;">
+      <div
+        style=" position: relative; color: #F4F4F5; font-size: 26px; font-family: Lato; font-weight: 700; white-space: nowrap; margin-left: 700%">
+        EN | $
+      </div>
+    </li>
+  </ng-template>
+
+
+  <li *ngIf="!isSignIn;else logOut"
+      style="display: inline-block;vertical-align: top; margin-top: 3%; margin-left:53%">
+    <div
+      style="position: relative; color: #F4F4F5; font-size: 24px; font-family: Lato; font-weight: 700; white-space: nowrap; ">
+      <a [routerLink]="['rent_module/user/create']" style="text-decoration: none; color: #F4F4F5">Sign up</a>
+    </div>
+  </li>
+  <ng-template #logOut>
+    <li style="display: inline-block;vertical-align: top; margin-top: 3%; margin-left:35%">
+      <div (click)="logout()"
+           style="position: relative; color: #F4F4F5; font-size: 24px; font-family: Lato; font-weight: 500; white-space: nowrap; ">
+        Log out
+      </div>
+    </li>
+  </ng-template>
+
+
+  <li *ngIf="!isSignIn;else myInfo" style="display: inline-block; float: right; margin: 1.7% 1% 0 0">
+    <div
+      style="width: 150px; height: 60px;position: relative;background: #F4F4F5; border-radius: 20px; display: flex; justify-content: center; align-items: center;">
+      <a [routerLink]="['auth_module/authenticate']"
+         style="position:relative;color: #2C7BB9; font-size: 32px; font-family: Lato; font-weight: bold;text-decoration: none; ">
+        Sign in</a>
+    </div>
+  </li>
+  <ng-template #myInfo>
+    <li style="display: inline-block; float: right; margin: 2.3% 4% 0 0">
+      <img [routerLink]="['myAkk/extraData/change']" style="height: 44px; width: 42px;" src="../../assets/images/person.png">
+    </li>
+  </ng-template>
+
+</ul>
+
+<div
+  style=" position: relative; text-align: center; color: #F4F4F5; font-size: 80px; font-family: Federo; font-weight: 400; line-height: 150px; word-wrap: break-word">
+  <br/>Discover Your Life, Drive<br/> Where You Want
+</div>
+
+<div
+  style="position: relative; text-align: center; color: #F4F4F5; font-size: 36px; font-family: Federo; font-weight: 400; line-height: 150px; letter-spacing: 1.80px; word-wrap: break-word">
+  Let`s rent the car and explore paradise in the world.
+</div>
+
+<app-date-picker></app-date-picker>
+<app-cars></app-cars>

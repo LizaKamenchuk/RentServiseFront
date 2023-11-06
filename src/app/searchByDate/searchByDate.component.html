@@ -1,0 +1,78 @@
+<div
+  style="width: 65%; height: 280px; margin: 8% auto; position: relative; background: #FDFDFE; border-radius: 40px;">
+
+  <ul id="pick up - return search form"
+      style="position: relative;width: 90%; height:60%;padding: 0 5% ; margin: 0; list-style-type: none; display: flex ">
+    <li id="pick up - return form"
+        style="display: inline-block; width: 70%; height: 100%; position: relative; display: flex; align-items: center;margin: 7% 5%">
+      <div
+        style="width: 100%; height: 100%; position: relative; background: #FDFDFE; border-radius: 30px; border: 5px #D9D9D9 solid">
+
+        <ul id="pick up-return text" style="padding: 0; list-style-type: none;">
+          <li style="display: inline-block; width: fit-content; margin: 5% 5%; float: left">
+            <div
+              style="position: relative; color: #858585; font-size: 20px; font-family: Lato; font-weight: 500;white-space: nowrap">
+              Pick-up date
+            </div>
+          </li>
+
+          <li style="display: inline-block; width: fit-content;margin: 5% 24% 5% 0; float: right">
+            <div
+              style="position: relative; color: #858585; font-size: 20px; font-family: Lato; font-weight: 500; white-space: nowrap">
+              Return date
+            </div>
+          </li>
+        </ul>
+
+        <img style="width: 50px; height: 50px; position: relative; top: 35%; left: 16%"
+             src="../../assets/images/calendar.png"/>
+
+        <ul id="dates" style="padding: 0; display: inline; position: absolute;bottom: 1%;left: 0;right: 0;">
+          <li id="startDate"
+              style="width: 40%; display: inline-block;float: left; position: relative; margin-left: 3%;">
+            <div>
+              <mat-form-field [ngStyle]="{'width': '100%'}">
+                <input matInput [matDatepicker]="startDatePicker" placeholder="startDate" [(ngModel)]="startDate"
+                       disabled
+                       style="position: relative; color: #1E1F1F; font-size: 19px; font-family: Lato; font-weight: 600; white-space: nowrap">
+                <mat-datepicker-toggle matIconSuffix [for]="startDatePicker">
+                  <mat-icon matDatepickerToggleIcon><img src="assets/images/down-arrow.png"></mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #startDatePicker disabled="false"></mat-datepicker>
+              </mat-form-field>
+
+            </div>
+          </li>
+
+          <li id="finishDate"
+              style="width: 40%; display: inline-block;float: right;position: relative; margin-right: 3%">
+            <div>
+              <mat-form-field [ngStyle]="{'width': '100%'}">
+                <input matInput [matDatepicker]="finishDatePicker" placeholder="finishDate" [(ngModel)]="finishDate"
+                       disabled
+                       style="position: relative; color: #1E1F1F; font-size: 19px; font-family: Lato; font-weight: 600; white-space: nowrap">
+                <mat-datepicker-toggle matIconSuffix [for]="finishDatePicker">
+                  <mat-icon matDatepickerToggleIcon><img src="assets/images/down-arrow.png"></mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #finishDatePicker disabled="false"></mat-datepicker>
+              </mat-form-field>
+
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </li>
+
+    <li id="search-button"
+        style="display: inline-block; width: 30%; height: 100%; position: relative; padding: 0; align-items: center; margin: 7% 0  ">
+      <button style="width: 80%;height: 100%;border: 0;background:#FDFDFE;border-radius: 50px">
+        <img src="../../assets/images/search.png" style="width: 100%; height: 100%">
+      </button>
+    </li>
+
+  </ul>
+</div>
+
+
+

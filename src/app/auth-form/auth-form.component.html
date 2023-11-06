@@ -1,0 +1,87 @@
+<!--<link href="auth-form.component.css" rel="stylesheet" type="text/css">-->
+<div
+  style="background-image: url('../../assets/images/phone_car.jpg'); background-size: cover; width: 100%; height: 120%; position: absolute">
+
+  <ul style="width: content-box; margin-right: auto;list-style-type: none;">
+
+    <li style="display: inline-block">
+      <div
+        style="position: relative; color: #F4F4F5; font-size: 64px; font-family: Federo; font-weight: 400; margin: 0.5% 0 0 1%;white-space: nowrap;">
+        Car Service
+      </div>
+    </li>
+
+    <li style="display: inline-block">
+      <img style="width: 49px; height: 49px; margin: 50% 0 0 1700%;position: relative;"
+           src="../../assets/images/earth.webp"/>
+    </li>
+
+    <li style="display: inline-block; position: absolute; margin-top: 2%">
+      <div
+        style="position: relative; color: #F4F4F5; font-size: 30px; font-family: Lato; font-weight: bold; margin: 0 0 0 2000%">
+        EN
+      </div>
+    </li>
+
+    <!--        это не работает идёт по пути auth_module/authenticate/rent_module/user/create-->
+<!--    <li style="display: inline-block;float: right;margin: 2% 4% 0 0">-->
+<!--      <a-->
+<!--        style="position: relative; color: #F4F4F5; font-size: 26px; font-family: Lato; font-weight: bold ;white-space: nowrap; text-decoration: none;"-->
+<!--        [routerLink]='["rent_module/user/create"]'>-->
+<!--        Sign up</a>-->
+<!--    <li>-->
+
+  </ul>
+
+  <form (ngSubmit)="authenticate(loginCredentials)" #authForm="ngForm" style="margin-top: 10%; width: content-box;">
+
+    <div style="color: #FF0404; margin:0 auto 5%; width: fit-content; font-size: 20px; text-shadow: 1px 0 1px white,0 1px 1px white,-1px 0 1px white,0 -1px 1px white; " *ngIf="errorMessage"
+         class="alert alert-danger">{{ errorMessage }}</div>
+
+    <div style=" margin: 20px auto 42px; width: fit-content">
+      <input type="text" [(ngModel)]="loginCredentials.login"
+             maxlength="45"
+             class="input"
+             id="login"
+             name="login"
+             placeholder="Login"
+             required #login="ngModel">
+      <div style="color: #FF0404; margin-left: 28px; margin-top: 2px; font-size: 20px" [hidden]="!login.pristine"
+           class="alert alert-danger">Login is required
+      </div>
+    </div>
+
+    <div style="margin: 42px auto;width: fit-content">
+      <input type="password" [(ngModel)]="loginCredentials.password"
+             maxlength="45"
+             class="input"
+             id="password-input"
+             name="password"
+             placeholder="Password"
+             required #password="ngModel"
+             >
+      <div style="color: #FF0404; margin-left: 28px; margin-top: 2px; font-size: 20px" [hidden]="!password.pristine"
+           class="alert alert-danger">Password is required
+      </div>
+
+    </div>
+
+    <div style="position: relative;">
+      <div
+        style="width:fit-content; position: relative; color: white; font-size: 22px; font-family: Lato; font-weight: 500; word-wrap: break-word; margin: 18px auto">
+        forgot password
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!authForm.form.valid"
+            class="button">Sign in
+    </button>
+
+  </form>
+
+  <div
+    style="width: content-box; height: 103px; margin: 1% auto; position: relative; text-align: center; color: #F4F4F5; font-size: 26px; font-family: Federo; font-weight: 400; line-height: 150px; letter-spacing: 1.30px; word-wrap: break-word">
+    Let`s rent the car and explore paradise in the world.
+  </div>
+
+</div>

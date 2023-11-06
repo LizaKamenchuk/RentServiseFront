@@ -1,0 +1,22 @@
+
+<div style="width: 75%; height: 85%; position: relative;background:#FDFDFE; border-radius: 30px; margin: 5% 0">
+  <img style="width: 80%; height: 60%;  position: relative; border-radius: 10px; margin: 5% auto 1%; left: 5%;" *ngFor = "let photo of car.photos"  [src] = "getBase64Image(photo)" />
+
+  <ul style="position: relative; width: 100%; margin: 0; padding: 0 5% 0">
+    <li id="car info" style="display: inline-block; float: left;">
+      <div style="width:fit-content; position: relative; color: black; font-size: 22px; font-family: Lato; font-weight: 700; word-wrap: break-word">{{car.mark}} {{car.model}}</div>
+      <div style="width: fit-content; position: relative">
+        <span style="color: black; font-size: 18px; font-family: Lato; font-weight: 700; word-wrap: break-word">{{car.price}}$</span>
+        <span style="color: #858585; font-size: 18px; font-family: Lato; font-weight: 700; word-wrap: break-word">/day</span>
+      </div>
+    </li>
+
+    <li id="book now" style="display: inline-block;right: auto; padding-left: 3%; padding-top: 4%">
+      <div
+        style="width: 130%; height: 15%;position: relative;background: #BED7EA; border-radius: 10px; display: flex; justify-content: center; align-items: center;">
+        <a style="position:relative;color: #2C7BB9; font-size: 17px; font-family: Lato; font-weight: 400;text-decoration: none;" (click) = "openBookNow()">
+          Book now</a>
+      </div>
+    </li>
+  </ul>
+</div>
