@@ -1,0 +1,26 @@
+<h1
+  style="position: relative; display: flex; justify-content: center;font-size: 40px; font-family: Lato; font-weight: bold; word-spacing: 5px">{{title}}</h1>
+<div
+  style="background: #FDFDFE; width: 30%; height: 70px; display: flex; margin: 3% auto 2% ;border-radius: 20px; align-items: center">
+  <menu style="padding: 0;width: 100%; position: relative">
+    <li class="class-li" style="position: relative;float: left;margin: 0 5%" (click)="handleClick('sport')"
+        [ngClass]="{'selected': selectedClass==='sport'}">Sport
+    </li>
+    <li class="class-li" style="position:relative;margin: 0 4% " (click)="handleClick('premium')"
+        [ngClass]="{'selected': selectedClass==='premium'}">Premium
+    </li>
+    <li class="class-li" style="position:relative;margin: 0 4% " (click)="handleClick('business')"
+        [ngClass]="{'selected': selectedClass==='business'}">Business
+    </li>
+    <li class="class-li" style="position:relative; float: right; margin: 0 5%" (click)="handleClick('middle')"
+        [ngClass]="{'selected': selectedClass==='middle'}">Middle
+    </li>
+  </menu>
+</div>
+<div class="card-container">
+  <div class="card-grid">
+    <app-car-card
+      style="width:100%; align-content: center;align-items:center; display: flex; justify-content: space-around"
+      *ngFor="let car of cars" [car]="car"></app-car-card>
+  </div>
+</div>

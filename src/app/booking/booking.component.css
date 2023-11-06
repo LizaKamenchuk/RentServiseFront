@@ -1,0 +1,21 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.bookNow-container{
+  width: 50%;
+  height: 90%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  background-color: #F2F9FF;
+  border-radius: 30px;
+}
+
+.bookNow-header{
+  color: #000;
+  font-family: Federo;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 5% auto;
+  position: relative;
+}

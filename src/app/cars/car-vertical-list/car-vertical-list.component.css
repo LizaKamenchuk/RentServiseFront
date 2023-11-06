@@ -1,0 +1,30 @@
+.card-container{
+  width: inherit;
+  height: inherit;
+  overflow: auto;
+  justify-content: space-around;
+  display: flex;
+}
+
+.card-grid{
+  width: 90%;
+  margin: 0 6%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.class-li{
+  display: inline-block;
+  color: #858585;
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.selected{
+  background: #2C7BB9;
+  color: #FDFDFE;
+  padding: 1%;
+  border-radius: 5px;
+}

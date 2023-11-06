@@ -1,0 +1,124 @@
+<div
+  style="background-image: url('../../assets/images/phone_car.jpg'); background-size: cover; width: 100%; height: 120%; position: absolute">
+
+  <ul style="width: content-box; margin-right: auto ">
+
+    <li style="display: inline-block">
+      <div
+        style="position: relative; color: #F4F4F5; font-size: 64px; font-family: Federo; font-weight: 400; word-wrap: break-word;white-space: nowrap;">
+        Car Service
+      </div>
+    </li>
+
+    <li style="display: inline-block">
+      <img style="width: 49px; height: 49px; margin: 47% 0 0 1960%;position: relative;"
+           src="../../assets/images/earth.webp"/>
+    </li>
+
+    <li style="display: inline-block; position: absolute; margin-top: 2%">
+      <div
+        style="position: relative; color: #F4F4F5; font-size: 30px; font-family: Lato; font-weight: bold; margin: 0 0 0 2300%">
+        EN
+      </div>
+    </li>
+  </ul>
+
+  <form (ngSubmit)="saveExtraData()" #extraDataForm="ngForm" style="width: fit-content;margin: 10% auto 2%">
+    <div style="color: #FF0404; margin:0 auto; width: fit-content; font-size: 20px; text-shadow: 1px 0 1px white,0 1px 1px white,-1px 0 1px white,0 -1px 1px white; " *ngIf="errorMessage"
+         class="alert alert-danger">{{ errorMessage }}</div>
+
+    <ul class="ul">
+
+      <li class="li">
+        <label class="label">Driving license id</label>
+        <input type="text" [(ngModel)]="extraData.drivingLicense"
+               class="input"
+               minlength="9"
+               maxlength="9"
+               label="Driving license id"
+               id="drivingLicense"
+               name="drivingLicense"
+               placeholder="111111111"
+               (ngModelChange)="checkDrivingLicense()"
+               style="margin: 0 auto 0.7%">
+        <div style="width: fit-content ;color: #FF0404; margin:0 0 5% 28px;"
+             class="alert alert-danger">{{licenseMessage}}
+        </div>
+      </li>
+
+      <li class="li">
+        <label class="label">Phone number</label>
+        <input type="text" [(ngModel)]="extraData.phone"
+               minlength="13"
+               maxlength="13"
+               class="input"
+               label="Phone number"
+               id="phone"
+               name="phone"
+               placeholder="+375 11 1111111"
+               (ngModelChange)="checkPhoneNumber()">
+        <div style="width: fit-content ;color: #FF0404; margin-left: 28px; margin-top: 2px"
+             class="alert alert-danger">{{phoneMessage}}
+        </div>
+      </li>
+
+    </ul>
+
+    <ul class="ul">
+
+      <li class="li">
+        <label class="label">Identification number</label>
+        <input type="text" [(ngModel)]="extraData.idPassport"
+               class="input"
+               minlength="14"
+               maxlength="14"
+               label="Identification number"
+               id="idPassport"
+               name="idPassport"
+               placeholder="1111111X111XX1"
+               (ngModelChange)="checkPassportId()">
+        <div style="width: fit-content ;color: #FF0404; margin:0 0 5% 28px;"
+             class="alert alert-danger">{{passportMessage}}
+        </div>
+      </li>
+
+      <li class="li" id="birthDate">
+        <label class="label">Date of birth</label>
+        <div style=" width: 320px; height: 60px;background: #FDFDFE;border-radius: 20px;border: 0 solid  #FDFDFE;font-size: 20px;font-family: Lato;padding:0; display: flex; justify-content: center; align-content: center">
+          <div style="height: fit-content;">
+
+            <mat-form-field [ngStyle]="{'width': '100%', 'height': '60px'}">
+              <input matInput [matDatepicker]="birthDatePicker" placeholder=''
+                     [(ngModel)]="extraData.dateOfBirth"
+                     [disabled]="true"
+                     name="dateOfBirth"
+                     readonly
+                     required #dateOfBirth = "ngModel"
+                     style="font-size: 20px;font-family: Lato;color: #858585;font-weight: 400;word-wrap: break-word;">
+              <mat-datepicker-toggle matIconSuffix [for]="birthDatePicker">
+                <mat-icon matDatepickerToggleIcon><img src="../../assets/images/down-arrow.png"></mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #birthDatePicker disabled="false"></mat-datepicker>
+            </mat-form-field>
+
+            <div style="color: #FF0404; margin-left: 28px; margin-top: 2px; font-size: 16px" [hidden]="!dateOfBirth.pristine"
+                 class="alert alert-danger">Date of birth is required
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <button type="submit" [disabled]="!extraDataForm.form.valid"
+            class="buttonSaveData"> Save data
+    </button>
+
+  </form>
+
+  <div
+    style="position: relative; color: #F4F4F5; font-size: 18px; font-family: Lato; font-weight: 400; white-space: nowrap; display: flex; justify-content: center">
+    <a [routerLink]="['']" style="text-decoration: none; color: #F4F4F5">Skip ></a>
+  </div>
+
+</div>
+

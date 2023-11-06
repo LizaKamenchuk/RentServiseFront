@@ -1,0 +1,74 @@
+<!--<!DOCTYPE html>-->
+<!--<div class="modal" style="width: 800px;-->
+<!--  height: 600px;-->
+<!--  position: relative;-->
+<!--  margin: 0;-->
+<!--  background-color: #F9FCFF;-->
+<!--  border-radius: 30px;">-->
+<!--  <h1 class="bookNow-header" style="color: #000;-->
+<!--  font-family: Federo;-->
+<!--  font-size: 38px;-->
+<!--  font-weight: 400;-->
+<!--  position: relative;-->
+<!--  margin: 0 40%;-->
+<!--  white-space: nowrap;"-->
+<!--  >Your order</h1>-->
+<!--  <h2 style="font-family: Lato; font-size: 33px">{{order.status}}</h2>-->
+<!--  <ul style="font-family: Lato">-->
+<!--    <img style="float: left; width: 18px;height: 230px; margin-top: 4% " src="assets/images/trash.png">-->
+
+<!--    <ul style="float: left;display: flex; flex-direction: column; margin-left: -3%">-->
+<!--      <li style="list-style-type: none; font-family: Lato; color: #9E9E9D; font-size: 16px;margin-top: 14%">Pick-up:-->
+<!--      </li>-->
+
+<!--      <li id="startDate"-->
+<!--          style="float: left; position: relative;  list-style-type: none; margin-top: 2%; width: 70%">-->
+<!--        <div style="color: black; font-family: Lato; font-size: 16px">-->
+<!--          {{order.startDate}}  10:00-->
+<!--        </div>-->
+<!--      </li>-->
+
+<!--      <li style="list-style-type: none; font-family: Lato; color: #9E9E9D; font-size: 16px;margin-top: 12%">Return:</li>-->
+
+<!--      <li id="finishDate"-->
+<!--          style="float: left; position: relative; margin-top:2%; list-style-type: none; width: 70%">-->
+<!--        <div style="color: black; font-family: Lato; font-size: 16px">-->
+<!--          {{order.finishDate}}  10:00-->
+<!--        </div>-->
+<!--      </li>-->
+
+<!--    </ul>-->
+<!--    <ul style="display: inline-block; padding-left: 0; padding-right: 2%; margin-left: 4%; margin-top: 1%">-->
+<!--      <h2 style="font-family: Lato; font-size: 20px">{{order.car?.mark}} {{order.car?.model}}</h2>-->
+<!--      <li style="color: #595959;font-family: Lato; margin-left: 12%; font-size: 17px">{{order.car?.manufacture_year}} year</li>-->
+<!--      <li style="color: #595959;font-family: Lato; margin-left: 12%; font-size: 17px">-->
+<!--        <div>{{order.car?.transmissionType}}</div>-->
+<!--      </li>-->
+<!--      <li style="color: #595959;font-family: Lato; margin-left: 12%; font-size: 17px">-->
+<!--        <div>{{order.car.fuelType}} {{order.car.fuel_consumption}}</div>-->
+<!--      </li>-->
+
+<!--    </ul>-->
+
+<!--    <li-->
+<!--      style="list-style-type: none;display: inline-block; padding: 0; float: right; width: 33%; margin-right: 3%; margin-top: 4%">-->
+<!--      <img style="width:100%; position: relative; border-radius: 10px;" *ngFor="let photo of order.car.photos"-->
+<!--           [src]="getBase64Image(photo)"/>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--  <div style="position:relative; width: fit-content; left: 6%; margin-top: 25%">-->
+<!--    <p style="font-family: Lato; font-weight: bold; font-size: 19px">Full price: {{order.price}}$</p>-->
+<!--  </div>-->
+
+<!--  <div style="width: 27%;margin: 5% auto 0">-->
+<!--    <div-->
+<!--         style="width: 100%; height: 8%;position: relative;background: #2C7BB9; border-radius: 10px; display: flex; justify-content: center; align-items: center;">-->
+<!--      <a-->
+<!--        style="position:relative;color: #FFFFFF; font-size: 19px; font-family: Lato; font-weight: 400;text-decoration: none;">-->
+<!--        Update order</a>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--</div>-->
+
